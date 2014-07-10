@@ -1,0 +1,89 @@
+@import 'reset';
+
+$small-width: 450px;
+
+$primary-font-color: #333;
+
+html {
+    height: 100%;
+
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 19px;
+        text-align: center;
+        vertical-align: middle;
+        height: 100%;
+
+        a {
+            &,
+            &:link,
+            &:hover,
+            &:active,
+            &:visited {
+                color: #07c;
+                text-decoration: none;
+            }
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        header {
+            display: inline-block;
+            vertical-align: bottom;
+            color: $primary-font-color;
+            margin: 0;
+            font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+            font-size: 38px;
+            background: url("../images/logo.png") no-repeat right center;
+            margin-top: 20%;
+
+            a {
+                display: block;
+                padding-right: 122px;
+                min-height: 102px;
+                line-height: 102px;
+
+                &,
+                &:link,
+                &:hover,
+                &:active,
+                &:visited {
+                    color: $primary-font-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/* ==|== media queries ===================================================== */
+
+@media only screen and (max-device-width: $small-width), only screen and (max-width: $small-width) {
+    html {
+        body {
+            header {
+                background-position: top center;
+                line-height: default;
+                font-size: 32px;
+
+                a {
+                    padding-right: 0;
+                    padding-top: 112px;
+                }
+            }
+        }
+    }
+}
+
+// retina
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    html {
+        body {
+            header {
+                background-image: url("../images/logo@2x.png");
+            }
+        }
+    }
+}
